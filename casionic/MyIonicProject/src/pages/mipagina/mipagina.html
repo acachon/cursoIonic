@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Mi pagina</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <h4>Aqui hago los ejemplos!</h4>
+
+  <p>
+    Calcula IMC
+  </p>
+
+  <label for="peso">Peso(kg) </label>
+  <input type="text" size="4" id="peso" [(ngModel)]="persona.peso"><br> <!-- elemento bidireccional entre el html y el ts -->
+  
+  <label for="atura">Altura(m) </label>
+  <input type="text" size="4" id="altura" [(ngModel)]="persona.altura"><br>
+  
+  <br><button ion-button id="boton1" (click)="calculaIMC()">Calcula IMC</button>
+
+  <label for="resultado">Resultado </label>
+  <input type="text" size="4" id="resultado" readonly value={{imc}}><br>         <!-- elemento unidireccinal del ts y el html -->
+
+</ion-content>
