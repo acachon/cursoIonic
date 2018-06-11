@@ -12,7 +12,7 @@
         
   <label for="input1">Canción buscada   </label>
   <input id="input1" [(ngModel)]="busqueda" size=8>
-  <button id="boton1" onclick="buscaListado()">Buscar</button>
+  <button id="boton1" (click)="buscaListado()">Buscar</button>
   
   <br><p id="mensaje1"></p>
    

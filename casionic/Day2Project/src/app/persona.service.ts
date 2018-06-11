@@ -1,53 +1,39 @@
 import { Injectable } from "@angular/core";
-import { Persona } from "./persona.model";
+import { Persona, Cancion } from "./persona.model";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
 
-/**
- * Servicio que nos proporciona
- * información de una persona
- * 
- * 
- *         //Llamo al servicio iTunes con esta cadena de busqueda
-        const servicio = "https://itunes.apple.com/search?";
-        var busqueda = "";
-        var parametros = "term=" + cadenaBuscada + "&media=music&limit=20";
-        
-        //configuro la url de busqueda, la llamada al API de iTunes
-        busqueda= servicio + parametros;
 
-        //Cuando se reciba la respuesta se actualiza el listado
-        miAjaxGet(busqueda,function(respuesta){
-            var aux = JSON.parse(respuesta);        //Variable intermedia con el resultado de Tunes
-            listaBuscada = aux.results;               //El objeto es solo la lista de canciones
-            actualizaListado(listaBuscada);         //Callback actualizaListado()
-        });
- * 
- * 
- * 
- * 
- */
 @Injectable()
 export class PersonaService {
 
-    static URL_SERVICIO_PERSONAS : string = "http://10.1.2.10:8080/appwebprofe/GetPersona";
-    static URL_SERVICIO_LISTA_PERSONAS : string = "http://10.1.2.10:8080/appwebprofe/GetListaPersonas";
-    static URL_SERVICIO_iTUNES : string = "https://itunes.apple.com/search?";
+    //static URL_SERVICIO_PERSONAS : string = "http://10.1.2.10:8080/appwebprofe/GetPersona";
+    //static URL_SERVICIO_LISTA_PERSONAS : string = "http://10.1.2.10:8080/appwebprofe/GetListaPersonas";
+   
+    static URL_SERVICIO_PERSONAS : string = "https://my-json-server.typicode.com/acachon/myServer/profile";
+    static URL_SERVICIO_LISTA_PERSONAS : string = "https://my-json-server.typicode.com/acachon/myServer/personas";
+    
 
     constructor( private http : HttpClient)
     {
 
     }
+    
+    getitunesHttp(cadenaBuscada: string): Observable<Cancion[]>{
 
-    getitunesHttp(cadenaBuscada: string): Observable<Canciones[]>{
+        //Listado de canciones a devolver
+        const URL_SERVICIO_iTUNES : string = "https://itunes.apple.com/search?";
+        let listado : Observable<Cancion[]>; 
 
-        let listado : Observable<Canciones[]>;
+        //construyo los parametros para la llamada al servicio de itunes
         let urlBusqueda: string = "term=" + cadenaBuscada + "&media=music&limit=20";
-        urlBusqueda= PersonaService.URL_SERVICIO_iTUNES + urlBusqueda;
+        urlBusqueda= URL_SERVICIO_iTUNES + urlBusqueda;
+
+        //Llamo al servicio de itunes
+        listado = this.http.get<Cancion[]>(urlBusqueda);
 
         return listado; 
     }
-
 
 
     getListaPersonasHttp (): Observable<Persona[]>
@@ -75,6 +61,7 @@ export class PersonaService {
         let persona : Persona;
 
             persona = new Persona ("Juan", 1.90, 80);
+            //let personaJSON: string = JSON.stringify(persona);
 
         return persona;
 
