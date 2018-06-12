@@ -16,68 +16,28 @@
   
   <br><p id="mensaje1"></p>
    
-        <label for="lista2">Elige una persona:</label>
-        <select [(ngModel)]="selector" (change)="actualizaFicha();">      <!--"actualizaFicha(unapersona)"-->
-          <option *ngFor="let unapersona of lista_personas" (click)=mostrarPersona(unapersona)>
-              {{unapersona.nombre}}
-          </option>
+        <label *ngIf="lista_canciones" for="lista2">Elige una canción:</label>
+        <select *ngIf="lista_canciones" [(ngModel)]="selector" (change)="actualizaFicha();">      <!--"selector almacena el value del option, aunque su inner Text diga otra cosa"-->
+          <option *ngFor="let cancion of this.lista_canciones;let i = index" value={{i}}>{{cancion.trackName}}</option>
         </select>
 
   <TABLE BORDER>
     <TR>
       <TD>
         <div>
-          <img id="img1" src="assets/imgs/logo.png" alt="Caratula" height="250px" width="300px"/>
+          <img id="img1" src={{caratula}} alt="Caratula" height="250px" width="300px"/>
         </div>
       </TD>
     </TR>
     <TR> 
       <TD>
         <div>
-          <div *ngIf="selector">
-              <p>Nombre: {{selector}} </p>
-          </div>
-          <p id=titulo1> Titulo: </p>
-          <p id=autor1> Autor: </p>
+          <p id=titulo1 > Titulo: {{titulo}}</p>
+          <p id=autor1 > Autor: {{autor}}</p>
           <p id="oculto1" style="display:none"> ID</p>
-          <audio id="audio1" src="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/55/1a/2b/551a2bec-5a6b-68ef-c2f3-1fc18771a073/mzaf_7900154786933204166.plus.aac.p.m4a" controls></audio>
+          <audio id="audio1" src={{audio}} controls></audio>
       </div>
     </TD> 
     </TR>
   </TABLE>
-
-<!-->
-  <div>
-    <label for="busqueda">Texto buscado</label>
-    
-  </div>
-
-
-
-  <div *ngIf="persona_cargada">
-    <label for="peso">PESO (Kg)</label>
-    <input type="text" size="4" id="peso" [(ngModel)]="persona.peso">
-    <br>
-    <label for="estatura">ESTATURA (M)</label>
-    <input type="text" size="4" id="estatura" [(ngModel)]="persona.estatura">
-    <button ion-button (click)="calculaIMC()">CalculaIMC</button>
-    <label for="resultado">Resultado</label>
-    <input type="text" size="4" id="resultado" readonly value={{resultado}}>
-    <p>
-      <button ion-button color="primary" menuToggle>Toggle Menu</button>
-    </p>
-  </div>
-  <div *ngIf="!persona_cargada">
-    <img src="assets/imgs/logo.png">
-  </div>
-
-<div *ngIf="lista_personas">
-  <ul *ngFor="let unapersona of lista_personas">
-    <li (click)=mostrarPersona(unapersona)>
-        {{unapersona.nombre}}-{{unapersona.estatura}}-{{unapersona.peso}}
-    </li>
-    
-  </ul>
-</div>
-<-->
 </ion-content>

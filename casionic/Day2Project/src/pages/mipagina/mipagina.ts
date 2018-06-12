@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Persona, Cancion } from '../../app/persona.model';
+import { Persona } from '../../app/persona.model';
+import { Cancion } from '../../app/persona.model';
 import { PersonaService } from '../../app/persona.service';
 import { AlertController } from 'ionic-angular';
 
@@ -18,7 +19,13 @@ export class MiPagina {
   private resultado : number;           
   private persona_cargada : boolean;    //Flag indicando que ya se ha recibido esta llamada y se puede visualizar en la pagina
   private selector : string;            //Valor seleccionado de la lista de canciones
-  private busqueda : string;            //Cadena introducida en la pagina para el texto a buscar             
+  private busqueda : string;            //Cadena introducida en la pagina para el texto a buscar
+  private titulo : string;              //Almaceno el titulo
+  private autor : string;               //Almaceno el autor
+  private audio : string;               //Almaceno el audio
+  private trackId : number;             //Almaceno el ID oculto de la cancion
+  private opcion : string;              //Almaceno el audio             
+  private caratula : string;            //Almaceno la caratula
 
   constructor(private persona_service : PersonaService, 
     private alertCtrl: AlertController) {
@@ -31,7 +38,7 @@ export class MiPagina {
     persona_service.getPersonaHttp().subscribe 
     (ok => this.consumirRespuestaPersona (ok));
 
-
+    this.caratula = "assets/imgs/logo.png";
   }
 
   buscaListado(){
@@ -46,8 +53,8 @@ export class MiPagina {
   //Muestra los atributos de cada elemento que contnga la respuesta (array de Persona)
   {
     //Casting de la respuesta
-    this.lista_canciones = <Cancion[]> listaCancionesok;       
-        console.log("ListaCancionesok = " + listaCancionesok);
+    this.lista_canciones = <Cancion[]> listaCancionesok.results;       
+        console.log("ListaCancionesok = " + listaCancionesok.resultCount);
     
     //Muestro por consola los elementos de la lista
     for (let index in this.lista_canciones){
@@ -104,8 +111,14 @@ export class MiPagina {
     //this.persona_seleccionada_index = miLista.selectedIndex;
     console.log ("Seleccionado: " + this.selector);
     console.log ("Texto buscado: " + this.busqueda);
-    //this.busqueda="hola";     //Esto si cambia el mensaje escrito en la caja de texto
-    //this.selector="Jose";   //Esto no cambia la seleccion manual hecha en el selector
+
+    //Actualizo la ficha
+    this.titulo = this.lista_canciones[this.selector].trackName; 
+    this.autor = this.lista_canciones[this.selector].artistName;
+    this.audio = this.lista_canciones[this.selector].previewUrl;
+    this.caratula = this.lista_canciones[this.selector].artworkUrl100;
+
+    //this.audio = "https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/Music/28/f6/d1/mzm.qjqbfung.aac.p.m4a";
   }
 
 }
