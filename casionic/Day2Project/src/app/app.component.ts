@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { PantallaInicio } from '../pages/0.pantallaInicio/PantallaInicio';
 import { ListPage } from '../pages/list/list';
 import { BuscadorItunes } from '../pages/1.BuscadorItunes/BuscadorItunes';
+import { CalculaIMC } from '../pages/2.CalculaIMC/CalculaIMC';
 
 
 @Component({
@@ -30,6 +31,7 @@ export class MyApp {
     this.pages = [
       { title: 'Inicio', component: PantallaInicio },
       { title: 'Lista (template)', component: ListPage },
+      { title: 'Calcula IMC', component: CalculaIMC },
       { title: 'Buscador iTunes', component: BuscadorItunes }
     ];
   }
