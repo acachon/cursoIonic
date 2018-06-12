@@ -1,7 +1,10 @@
 import { Injectable } from "@angular/core";
-import { Persona, Cancion } from "./miPagina.model";
-import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
+import { HttpClient } from "@angular/common/http";
+
+import { Persona } from "./BuscadorItunes.model";
+import { Cancion } from "./BuscadorItunes.model";
+
 
 
 @Injectable()

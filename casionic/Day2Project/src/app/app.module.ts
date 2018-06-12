@@ -1,24 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
-
-import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
-import { ItemDetailsPage } from '../pages/item-details/item-details';
-import { ListPage } from '../pages/list/list';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { MiPagina } from '../pages/mipagina/mipagina';
+import { MyApp } from './app.component';
+
+
+import { PantallaInicio } from '../pages/0.pantallaInicio/PantallaInicio';
+import { ListPage } from '../pages/list/list';
+import { ItemDetailsPage } from '../pages/item-details/item-details';
+import { BuscadorItunes } from '../pages/1.BuscadorItunes/BuscadorItunes';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     MyApp,
-    HelloIonicPage,
+    PantallaInicio,
     ItemDetailsPage,
     ListPage, 
-    MiPagina
+    BuscadorItunes,
   ],
   imports: [
     BrowserModule,
@@ -28,10 +28,10 @@ import { HttpClientModule } from '@angular/common/http';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HelloIonicPage,
+    PantallaInicio,
     ItemDetailsPage,
     ListPage,
-    MiPagina
+    BuscadorItunes,
   ],
   providers: [
     StatusBar,

@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
-import { Persona } from '../../app/miPagina.model';
-import { Cancion } from '../../app/miPagina.model';
-import { PersonaService } from '../../app/miPagina.service';
 import { AlertController } from 'ionic-angular';
 
+import { Persona } from '../../app/BuscadorItunes.model';
+import { Cancion } from '../../app/BuscadorItunes.model';
+import { PersonaService } from '../../app/BuscadorItunes.service';
+
+
 @Component({
-  selector: 'mipagina',
-  templateUrl: 'mipagina.html',
+  selector: 'BuscadorItunes',
+  templateUrl: 'BuscadorItunes.html',
   providers: [PersonaService]
 })
-export class MiPagina {
+export class BuscadorItunes {
 
   private persona : Persona;            //Resultado de la busqueda indivudal
   private lista_personas : Persona[];   //Resultado de la busqueda colectivo  

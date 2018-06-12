@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'page-hello-ionic',
-  templateUrl: 'hello-ionic.html',
+  selector: 'PantallaInicio',
+  templateUrl: 'PantallaInicio.html',
   styles:  [``]
 })
-export class HelloIonicPage {
+export class PantallaInicio {
   constructor() {
 
   }
