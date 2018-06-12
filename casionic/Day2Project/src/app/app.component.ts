@@ -30,9 +30,9 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage },
-      { title: 'Mi primera page', component: MiPagina }
+      { title: 'Inicio', component: HelloIonicPage },
+      { title: 'Lista (template)', component: ListPage },
+      { title: 'Buscador iTunes', component: MiPagina }
     ];
   }
 

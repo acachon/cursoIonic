@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Persona } from '../../app/persona.model';
-import { Cancion } from '../../app/persona.model';
-import { PersonaService } from '../../app/persona.service';
+import { Persona } from '../../app/miPagina.model';
+import { Cancion } from '../../app/miPagina.model';
+import { PersonaService } from '../../app/miPagina.service';
 import { AlertController } from 'ionic-angular';
 
 @Component({
@@ -30,15 +30,18 @@ export class MiPagina {
   constructor(private persona_service : PersonaService, 
     private alertCtrl: AlertController) {
 
+    //Inicializo variables de la pagina
+    this.caratula = "assets/imgs/logo.png";     //Foto por defecto mientras no se seleccione ninguna de la lista
+
     //Llamo al servicio que me devuelve una lista de personas
     this.persona_service.getListaPersonasHttp().subscribe
     (listaok => this.consumirRespuestaListaPersonas(listaok));
    
-    //Llamo al servicio que me deveulve una persona con sus atributos
+    //Llamo al servicio que me devuelve una persona con sus atributos
     persona_service.getPersonaHttp().subscribe 
     (ok => this.consumirRespuestaPersona (ok));
 
-    this.caratula = "assets/imgs/logo.png";
+
   }
 
   buscaListado(){

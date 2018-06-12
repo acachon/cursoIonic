@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Persona, Cancion } from "./persona.model";
+import { Persona, Cancion } from "./miPagina.model";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
 

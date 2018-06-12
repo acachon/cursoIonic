@@ -1,19 +1,19 @@
-export class Persona {
+export class Persona {  //Tiene que ser una clase (y no solo un interfaz porque tiene una funcion (metodo)
 
     nombre : string;
     estatura : number;
     peso : number;
 
     constructor (nombre : string, estatura : number, peso : number)
+    //Le defino un constructor para realizar alguna funcion en esta clase
     {
         this.nombre = nombre;
         this.estatura = estatura;
         this.peso = peso;
     }
-
 }
 
-export class Cancion {
+export interface Cancion {  //Lo defino como interfaz porque ocupa menos, y no necesita ningun metodo
     //Clase utilizada por la pagina de itunes al hacer una busqueda
     //Nos interesan: artisName (cantante), artworkUrl100 (portada), isStreamable (tiene auido)
     //trackName (cancion), trackViewUrl (audio)
