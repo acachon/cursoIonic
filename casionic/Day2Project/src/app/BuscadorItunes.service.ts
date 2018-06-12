@@ -2,19 +2,17 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import { HttpClient } from "@angular/common/http";
 
-import { Persona } from "./BuscadorItunes.model";
 import { Cancion } from "./BuscadorItunes.model";
-
-
+//import { Persona } from "./BuscadorItunes.model";
 
 @Injectable()
-export class PersonaService {
+export class BuscadorService {
 
     //static URL_SERVICIO_PERSONAS : string = "http://10.1.2.10:8080/appwebprofe/GetPersona";
     //static URL_SERVICIO_LISTA_PERSONAS : string = "http://10.1.2.10:8080/appwebprofe/GetListaPersonas";
    
-    static URL_SERVICIO_PERSONAS : string = "https://my-json-server.typicode.com/acachon/myServer/profile";
-    static URL_SERVICIO_LISTA_PERSONAS : string = "https://my-json-server.typicode.com/acachon/myServer/personas";
+    //static URL_SERVICIO_PERSONAS : string = "https://my-json-server.typicode.com/acachon/myServer/profile";
+    //static URL_SERVICIO_LISTA_PERSONAS : string = "https://my-json-server.typicode.com/acachon/myServer/personas";
     
 
     constructor( private http : HttpClient)
@@ -38,7 +36,7 @@ export class PersonaService {
         return listado; 
     }
 
-
+/*
     getListaPersonasHttp (): Observable<Persona[]>
     {
         let lista_persona_remota : Observable<Persona[]>;
@@ -50,6 +48,7 @@ export class PersonaService {
         return lista_persona_remota;
 
     }
+
     getPersonaHttp (): Observable<Persona>
     {
         let persona_remota : Observable<Persona>;
@@ -69,5 +68,5 @@ export class PersonaService {
         return persona;
 
     }
-
+*/
 }

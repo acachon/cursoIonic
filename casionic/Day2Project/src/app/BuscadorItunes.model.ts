@@ -1,3 +1,4 @@
+/*
 export class Persona {  //Tiene que ser una clase (y no solo un interfaz porque tiene una funcion (metodo)
 
     nombre : string;
@@ -12,6 +13,7 @@ export class Persona {  //Tiene que ser una clase (y no solo un interfaz porque 
         this.peso = peso;
     }
 }
+*/
 
 export interface Cancion {  //Lo defino como interfaz porque ocupa menos, y no necesita ningun metodo
     //Clase utilizada por la pagina de itunes al hacer una busqueda
