@@ -5,10 +5,6 @@ import { HttpClient } from "@angular/common/http";
 import { Persona } from "./CalculaIMC.model";
 
 @Injectable()
-/*
-Este servicio realmente no ataca a un servidor
-Estoy emulando el que hubiera un servicio que devolviera datos
-*/
 export class PersonaService {
 
     //Variable globales a la clase
@@ -21,8 +17,7 @@ export class PersonaService {
     static URL_SERVICIO_PERSONA : string = "https://my-json-server.typicode.com/acachon/myServer/profile";
     static URL_SERVICIO_LISTA_PERSONAS : string = "https://my-json-server.typicode.com/acachon/myServer/personas";
 
-    constructor(private http : HttpClient){
-        
+    constructor(private http : HttpClient){   
     }
 
     getPersona() : Persona {
@@ -52,5 +47,4 @@ export class PersonaService {
        
         return persona_remota;
     }
-
 }
