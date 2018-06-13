@@ -10,7 +10,9 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "nombre": "Angel",
+    "altura": 1.80,
+    "peso": 94
   }, 
   "personas": [
     {
