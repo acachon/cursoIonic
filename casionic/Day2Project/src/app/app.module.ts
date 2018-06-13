@@ -1,24 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
-
-import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
-import { ItemDetailsPage } from '../pages/item-details/item-details';
-import { ListPage } from '../pages/list/list';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { MiPagina } from '../pages/mipagina/mipagina';
+import { MyApp } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+
+import { PantallaInicio } from '../pages/0.pantallaInicio/PantallaInicio';
+import { ListPage } from '../pages/list/list';
+import { ItemDetailsPage } from '../pages/item-details/item-details';
+import { BuscadorItunes } from '../pages/1.BuscadorItunes/BuscadorItunes';
+import { CalculaIMC } from '../pages/2.CalculaIMC/CalculaIMC';
+
 
 @NgModule({
   declarations: [
     MyApp,
-    HelloIonicPage,
+    PantallaInicio,
     ItemDetailsPage,
     ListPage, 
-    MiPagina
+    BuscadorItunes,
+    CalculaIMC,
   ],
   imports: [
     BrowserModule,
@@ -28,10 +30,11 @@ import { HttpClientModule } from '@angular/common/http';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HelloIonicPage,
+    PantallaInicio,
     ItemDetailsPage,
     ListPage,
-    MiPagina
+    BuscadorItunes,
+    CalculaIMC,
   ],
   providers: [
     StatusBar,

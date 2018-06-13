@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Buscador iTunes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h4>Busca tu canción</h4>
+        
+  <label for="input1">Canción buscada   </label>
+  <input id="input1" [(ngModel)]="busqueda" size=8>
+  <button id="boton1" (click)="buscaListado()">Buscar</button>
+  
+  <br><p id="mensaje1"></p>
+   
+        <label *ngIf="lista_canciones" for="lista2">Elige una canción:</label>
+        <select *ngIf="lista_canciones" [(ngModel)]="selector" (change)="actualizaFicha();">      <!--"selector almacena el value del option, aunque su inner Text diga otra cosa"-->
+          <option *ngFor="let cancion of this.lista_canciones;let i = index" value={{i}}>{{cancion.trackName}}</option>
+        </select>
+
+  <TABLE BORDER>
+    <TR>
+      <TD>
+        <div>
+          <img id="img1" src={{caratula}} alt="Caratula" height="250px" width="300px"/>
+        </div>
+      </TD>
+    </TR>
+    <TR> 
+      <TD>
+        <div>
+          <p id=titulo1 > Titulo: {{titulo}}</p>
+          <p id=autor1 > Autor: {{autor}}</p>
+          <p id="oculto1" style="display:none"> ID</p>
+          <audio id="audio1" src={{audio}} controls></audio>
+      </div>
+    </TD> 
+    </TR>
+  </TABLE>
+</ion-content>
