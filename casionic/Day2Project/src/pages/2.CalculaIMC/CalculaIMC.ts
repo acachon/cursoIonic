@@ -1,3 +1,6 @@
+//----------------//
+//by Angel Cachon //
+//----------------// 
 import { Component } from '@angular/core';
 import { AlertController } from 'ionic-angular';
 
