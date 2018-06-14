@@ -17,14 +17,35 @@
   </p>
 
   <label for="peso">Peso(kg) </label>
-  <input type="text" size="4" id="peso" [(ngModel)]="persona.peso"><br> <!-- elemento bidireccional entre el html y el ts -->
-  
+  <input type="text" size="4" id="peso" [(ngModel)]="persona.peso">
+  <br>
+  <!-- elemento bidireccional entre el html y el ts -->
+
   <label for="atura">Altura(m) </label>
-  <input type="text" size="4" id="altura" [(ngModel)]="persona.altura"><br>
-  
-  <br><button ion-button id="boton1" (click)="calculaIMC()">Calcula IMC</button>
+  <input type="text" size="4" id="altura" [(ngModel)]="persona.altura">
+  <br>
+
+  <br>
+  <button ion-button id="boton1" (click)="calculaIMC()">Calcula IMC</button>
 
   <label for="resultado">Resultado </label>
-  <input type="text" size="4" id="resultado" readonly value={{imc}}><br>         <!-- elemento unidireccinal del ts y el html -->
+  <input type="text" size="4" id="resultado" readonly value={{imc}}>
+  <br>
+
+
+  <!-- Probando mi huevo de Pascua -->
+
+  <!-- Puedes meter este codigo en un <img>, <tr>... donde quieras-->
+  <div (click)="!dale?dale=1:dale=dale+1;huevo=dale>3">Y dale !!</div>
+
+  <!-- Mete ng-if="!huevo" en lo que quieres que desaparezca-->
+  <!-- Y este es el mensaje que quieras que aparezca-->
+  <div *ngIf="huevo">
+    <hr>
+    <h1>¡¡Mi huevo de Pascua!!</h1>
+    <p>Vale ya de tocar las … cositas, no?</p>
+    <p>{{dale}} toquecitos y .. ¿qué más esperabas?</p>
+    <hr>
+  </div>
 
 </ion-content>

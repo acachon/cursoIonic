@@ -21,6 +21,7 @@ export class CalculaIMC {
   private persona_cargada : boolean;//Flag indicando que ya se ha recibido esta llamada y se puede visualizar en la pagina
   private lista_personas : Persona[];   //Resultado de la busqueda colectivo 
 
+  
   constructor(persona_service: PersonaService, private alertCtrl: AlertController) {  //Declaro los servicios que  luego uso
     //Distintos modos de actualizar los inputs para el calculo del IMC
     
