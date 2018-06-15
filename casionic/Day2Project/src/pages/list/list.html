@@ -13,6 +13,7 @@
       <ion-avatar item-start><img src="{{item.src}}"></ion-avatar >
       <div>{{item.titulo}}</div>
       <div class="item-note" item-right>{{item.autor}}</div>
+      <ion-icon (click)="itemDeleted($event, item)"item-right name="trash"></ion-icon>
     </button>
   </ion-list>
 </ion-content>

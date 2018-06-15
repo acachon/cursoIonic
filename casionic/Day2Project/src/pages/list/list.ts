@@ -10,8 +10,8 @@ import { Storage } from '@ionic/storage';
 export class ListPage {
   icons: string[]=['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
   'american-football', 'boat', 'bluetooth', 'build'];
-
   items: Array<{titulo: string, autor: string, icon: string, src: string, audio: string}>;
+  private flagBorrar: boolean=false;  //marco si se ha borrado la cancion
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
@@ -49,8 +49,30 @@ export class ListPage {
   }
 
   itemTapped(event, item) {
-    this.navCtrl.push(ItemDetailsPage, {
-      item: item
-    });
+    //Abro una ventana con al ficha para escucharla
+    if (!this.flagBorrar){  //si flag is true es porque he pinchado en borrar y borrado el elemento
+      this.navCtrl.push(ItemDetailsPage, {
+        item: item
+      });
+    } else{
+      this.flagBorrar=false;    //Lo vuelvo a su valor por defecto tras haber borrado e ignorado el click
+    }
   }
+
+  itemDeleted(event, item) {
+    //Borro la cancion de mis favoritos
+    console.log("Eliminada la cancion: " + item.titulo);
+
+    //Borro el elemento (item) del array (items)
+    this.flagBorrar=true;    //cuando se dispare el evento click sobre el boton para ir a la ficha de la cancion, lo marco a null
+    
+    //Recreo el array menos el objeto que quiero quitar (la pagina se actualizara)
+    this.items = this.items.filter(obj => obj !== item);
+
+    //Reescribo el storage con el nuevo array sin ese elemento
+    //TODO: eliminar del fichero storage
+    
+    
+  }
+  
 }
