@@ -11,7 +11,7 @@ export class ListPage {
   icons: string[]=['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
   'american-football', 'boat', 'bluetooth', 'build'];
 
-  items: Array<{titulo: string, autor: string, icon: string, src: string}>;
+  items: Array<{titulo: string, autor: string, icon: string, src: string, audio: string}>;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
@@ -28,18 +28,19 @@ export class ListPage {
           titulo: "Lista vacia",
           autor: "",
           icon: this.icons[Math.floor(Math.random() * this.icons.length)],     //Cambiar la estructura para meter la portada
-          src: "assets/imgs/ItunesIonic_logo.png"
+          src: "assets/imgs/ItunesIonic_logo.png",
+          audio: "",
         }];
       } else {          //si existe una lista la cargo y sumo al final la nueva cancion
           console.log("Tienes " + val.length + " canciones favoritas" );
           //Actualizo el listado de elementos a mostrar, sustituyendo la plantilla por los favoritos
-          //this.items = [];
           for(let i = 0; i < val.length; i++) {
             this.items[i]={
               titulo: val[i].trackName,
               autor: val[i].artistName,
               icon: this.icons[Math.floor(Math.random() * this.icons.length)],     //Cambiar la estructura para meter la portada
-              src: val[i].artworkUrl100
+              src: val[i].artworkUrl100,
+              audio: val[i].previewUrl,
             };
           }
         }

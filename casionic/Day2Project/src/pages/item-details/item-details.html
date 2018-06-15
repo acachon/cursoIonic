@@ -1,18 +1,32 @@
 <ion-header>
   <ion-navbar>
-    <button menuToggle *ngIf="!selectedItem">
+    <button ion-button menuToggle *ngIf="!selectedItem">
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Item Details</ion-title>
+    <ion-title>Cancion favorita</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <h3 text-center *ngIf="selectedItem">
-    {{selectedItem.title}}
-    <ion-icon [name]="selectedItem.icon"></ion-icon>
-  </h3>
-  <h4 text-center *ngIf="selectedItem">
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </h4>
+  <TABLE BORDER>
+    <TR>
+      <TD>
+        <div>
+          <img id="img1" src={{selectedItem.src}} alt="Caratula" height="250px" width="300px"/>
+        </div>
+      </TD>
+    </TR>
+    <TR> 
+      <TD>
+        <div>
+          <p id=titulo1 > Titulo: {{selectedItem.titulo}}</p>
+          <p id=autor1 > Autor: {{selectedItem.autor}}</p>
+          <p id="oculto1" style="display:none"> ID</p>
+          <audio id="audio1" src={{selectedItem.audio}} controls></audio>
+        </div>
+    </TD> 
+    </TR>
+  </TABLE>
+
 </ion-content>
+
