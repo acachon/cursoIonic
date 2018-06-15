@@ -30,8 +30,8 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Inicio', component: PantallaInicio },
-      { title: 'Lista (template)', component: ListPage },
       { title: 'Calcula IMC', component: CalculaIMC },
+      { title: 'Mis favoritos iTunes', component: ListPage },
       { title: 'Buscador iTunes', component: BuscadorItunes }
     ];
   }

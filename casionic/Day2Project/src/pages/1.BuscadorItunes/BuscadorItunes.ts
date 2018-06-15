@@ -26,7 +26,7 @@ export class BuscadorItunes {
   constructor(private servicioBusquedaItunes : BuscadorService,
               public storage: Storage) {
   //Inicializo variables de la pagina
-    this.caratula = "assets/imgs/logo.png";     //Foto por defecto mientras no se seleccione ninguna de la lista
+    this.caratula = "assets/imgs/ItunesIonic_logo.png";     //Foto por defecto mientras no se seleccione ninguna de la lista
   }
 
   meterFavoritos(){
@@ -44,7 +44,7 @@ export class BuscadorItunes {
       let cancion=this.lista_canciones[this.selector];
 
       //Recupero el listado guardado en storage para incluir la nueva
-      //Actualizo el fichero en est misma promesa
+      //Actualizo el fichero en esta misma promesa
       this.storage.get("favoritos").then((val) => {
         if (val==null){ //Si no existe inicializo misFavoritos
           this.misFavoritos=undefined;
@@ -70,11 +70,6 @@ export class BuscadorItunes {
       //Actualizo el fichero storage donde guardo la lista de canciones
       this.storage.set("cancion", this.lista_canciones[this.selector]);
 
-      /*// Recupero del storage para ver que se ha guardado bien
-      this.storage.get("favoritos").then((val) => {
-        console.log("Tienes " + val.length + " canciones favoritas" );
-      });
-      */
     }
 
   }

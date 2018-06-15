@@ -12,7 +12,7 @@
         
   <label for="input1">Canción buscada   </label>
   <input id="input1" [(ngModel)]="busqueda" size=8>
-  <button id="boton1" (click)="buscaListado()">Buscar</button>
+  <button id="boton1" item-right (click)="buscaListado()">Buscar</button>
   
   <br><p id="mensaje1"></p>
    
@@ -35,8 +35,8 @@
           <p id=titulo1 > Titulo: {{titulo}}</p>
           <p id=autor1 > Autor: {{autor}}</p>
           <p id="oculto1" style="display:none"> ID</p>
-          <button id="boton1" (click)="meterFavoritos()" >Añadir a favortitos</button><br>
           <audio id="audio1" src={{audio}} controls></audio>
+          <button ion-button block id="boton2" (click)="meterFavoritos()" >Añadir a favortitos</button><br>
       </div>
     </TD> 
     </TR>

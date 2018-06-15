@@ -8,45 +8,43 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'list.html'
 })
 export class ListPage {
-  icons: string[];
-  items: Array<{title: string, note: string, icon: string, src: string}>;
+  icons: string[]=['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
+  'american-football', 'boat', 'bluetooth', 'build'];
+
+  items: Array<{titulo: string, autor: string, icon: string, src: string}>;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public storage: Storage) {
 
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-    'american-football', 'boat', 'bluetooth', 'build'];
-
-    //Creo una lista por defecto como el template
-    
+    //Recreo la lista de nuevo
     this.items = [];
-    /*
-    for(let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
-    */
-
+    
     // Recupero del storage la lista de favoritos para ver actualizar el listado de esta pagina
     this.storage.get("favoritos").then((val) => 
     {
-      console.log("Tienes " + val.length + " canciones favoritas" );
-      //Actualizo el listado de elementos a mostrar, sustituyendo la plantilla por los favoritos
-      //this.items = [];
-      for(let i = 0; i < val.length; i++) {
-        this.items[i]={
-          title: 'Favorito ' + (i+1),
-          note: val[i].trackName,
+      if (val==null){   //Si no hay lista de favoritos
+        this.items=[{
+          titulo: "Lista vacia",
+          autor: "",
           icon: this.icons[Math.floor(Math.random() * this.icons.length)],     //Cambiar la estructura para meter la portada
-          src: val[i].artworkUrl100
-        };
-      }
+          src: "assets/imgs/ItunesIonic_logo.png"
+        }];
+      } else {          //si existe una lista la cargo y sumo al final la nueva cancion
+          console.log("Tienes " + val.length + " canciones favoritas" );
+          //Actualizo el listado de elementos a mostrar, sustituyendo la plantilla por los favoritos
+          //this.items = [];
+          for(let i = 0; i < val.length; i++) {
+            this.items[i]={
+              titulo: val[i].trackName,
+              autor: val[i].artistName,
+              icon: this.icons[Math.floor(Math.random() * this.icons.length)],     //Cambiar la estructura para meter la portada
+              src: val[i].artworkUrl100
+            };
+          }
+        }
     });
-    
+      
   }
 
   itemTapped(event, item) {
