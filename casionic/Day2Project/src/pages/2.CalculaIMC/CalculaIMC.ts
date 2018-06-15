@@ -6,6 +6,7 @@ import { AlertController } from 'ionic-angular';
 
 import { Persona } from '../../app/CalculaIMC.model';
 import { PersonaService } from '../../app/CalculaIMC.service';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'CalculaIMC',
@@ -22,7 +23,8 @@ export class CalculaIMC {
   private lista_personas : Persona[];   //Resultado de la busqueda colectivo 
 
   
-  constructor(persona_service: PersonaService, private alertCtrl: AlertController) {  //Declaro los servicios que  luego uso
+  constructor(persona_service: PersonaService, 
+              private alertCtrl: AlertController) {  //Declaro los servicios que  luego uso
     //Distintos modos de actualizar los inputs para el calculo del IMC
     
     //1. Estaticamente, mediante el constructor
@@ -62,7 +64,7 @@ export class CalculaIMC {
   calculaIMC() {
   //Calcula el indice de masa corporal en base a los campos rellenos
     let resultado: number = this.persona.peso/this.persona.altura/this.persona.altura;
-    this.imc = Math.floor(resultado); 
+    this.imc = Math.floor(resultado);  
   }
 
   consumirRespuestaListaPersonas ( listaok : any)

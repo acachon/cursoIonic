@@ -16,10 +16,10 @@
   
   <br><p id="mensaje1"></p>
    
-        <label *ngIf="lista_canciones" for="lista2">Elige una canción:</label>
-        <select *ngIf="lista_canciones" [(ngModel)]="selector" (change)="actualizaFicha();">      <!--"selector almacena el value del option, aunque su inner Text diga otra cosa"-->
-          <option *ngFor="let cancion of this.lista_canciones;let i = index" value={{i}}>{{cancion.trackName}}</option>
-        </select>
+  <label *ngIf="lista_canciones" for="lista2">Elige una canción:</label>
+  <select *ngIf="lista_canciones" [(ngModel)]="selector" (change)="actualizaFicha();">      <!--"selector almacena el value del option, aunque su inner Text diga otra cosa"-->
+    <option *ngFor="let cancion of this.lista_canciones;let i = index" value={{i}}>{{cancion.trackName}}</option>
+  </select>
 
   <TABLE BORDER>
     <TR>
@@ -35,6 +35,7 @@
           <p id=titulo1 > Titulo: {{titulo}}</p>
           <p id=autor1 > Autor: {{autor}}</p>
           <p id="oculto1" style="display:none"> ID</p>
+          <button id="boton1" (click)="meterFavoritos()" >Añadir a favortitos</button><br>
           <audio id="audio1" src={{audio}} controls></audio>
       </div>
     </TD> 

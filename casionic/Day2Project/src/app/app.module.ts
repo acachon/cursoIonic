@@ -11,6 +11,7 @@ import { ListPage } from '../pages/list/list';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { BuscadorItunes } from '../pages/1.BuscadorItunes/BuscadorItunes';
 import { CalculaIMC } from '../pages/2.CalculaIMC/CalculaIMC';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { CalculaIMC } from '../pages/2.CalculaIMC/CalculaIMC';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -16,7 +16,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make PantallaInicio the root (or first) page
-  rootPage = PantallaInicio;
+  rootPage = BuscadorItunes;
   pages: Array<{title: string, component: any}>;
 
   constructor(
