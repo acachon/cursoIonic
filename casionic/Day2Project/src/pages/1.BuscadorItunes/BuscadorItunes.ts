@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import { Cancion } from '../../app/BuscadorItunes.model';
 import { BuscadorService } from '../../app/BuscadorItunes.service';
 import { Storage } from '@ionic/storage';
+import { MisFavoritos } from '../../app/MisFavoritos.service';
 
 @Component({
   selector: 'BuscadorItunes',
   templateUrl: 'BuscadorItunes.html',
-  providers: [BuscadorService]
+  providers: [BuscadorService, MisFavoritos]
 })
 export class BuscadorItunes {
 
@@ -24,7 +25,8 @@ export class BuscadorItunes {
   private misFavoritos: Cancion[];      //Mi lista de favoritos
 
   constructor(private servicioBusquedaItunes : BuscadorService,
-              public storage: Storage) {
+              public storage: Storage,
+              private servicioListaFavoritos: MisFavoritos) {
   //Inicializo variables de la pagina
     this.caratula = "assets/imgs/ItunesIonic_logo.png";     //Foto por defecto mientras no se seleccione ninguna de la lista
   }
@@ -32,47 +34,18 @@ export class BuscadorItunes {
   meterFavoritos(){
   //Almaceno el listado de fvortios en Storage 
     //Pulso el boton de favoritos
-    console.log("Favortitos pulsado");
+    console.log("Boton favortitos pulsado");
     
     //Guardo el valor del titulo seleccionado
     if (this.titulo===undefined){
       alert("Selecciona una cacion");
 
     }else{
-      console.log("Guardo la canción");
-      // Guardo la cancion seleccionada en misFavoritos
-      //TODO: quitar el push
+      console.log("Llamo a itemAdd()");
+      // Recupero la cancion y llamo al servicio itemAdd
       let cancion=this.lista_canciones[this.selector];
-
-      //Recupero el listado guardado en storage para incluir la nueva
-      //Actualizo el fichero en esta misma promesa
-      this.storage.get("favoritos").then((val) => {
-        if (val==null){ //Si no existe inicializo misFavoritos
-          this.misFavoritos=undefined;
-        }else{
-          this.misFavoritos=val;
-          console.log("Ya tenias " + val.length + " canciones favoritas" );
-        }
-
-        //Actualizo el atributo misFavoritos con la nueva cancion
-        if (this.misFavoritos==undefined){
-          this.misFavoritos=[cancion];
-        }else{
-          let largo = this.misFavoritos.length;
-          this.misFavoritos[largo]=cancion;
-        }
-
-        //Actualizo el fichero storage donde guardo la lista de canciones
-        this.storage.set("favoritos", this.misFavoritos);
-        console.log("Fichero storage actualizado con: " + cancion.artistName)
-
-      });
-      
-      //Actualizo el fichero storage donde guardo la lista de canciones
-      this.storage.set("cancion", this.lista_canciones[this.selector]);
-
+      this.servicioListaFavoritos.itemAdd(cancion);
     }
-
   }
 
   buscaListado(){
