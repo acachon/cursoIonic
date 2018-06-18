@@ -48,4 +48,39 @@
     <hr>
   </div>
 
+  <!-- Meto un formulario para probar con el -->
+  <!--aquí va nuestro formulario-->
+  <div style="text-align:center" >  
+    <form #formulario_login="ngForm" (ngSubmit)="acceder(formulario_login.value, formulario_login.valid)">
+      <div>
+        <ion-item>
+          <ion-label>Nombre</ion-label>
+          <ion-input type="text" #nombre="ngModel" name="nombre" [(ngModel)]="login.nombre" required pattern=".{4,6}"></ion-input>  <!-- longitud entre 4 y 6 caracteres-->
+        </ion-item>
+        <small [hidden]="!(formulario_login.submitted && !nombre.valid)"> <!-- Si la condicion es true, se oculta-->
+          Nombre de al menos 4 letras
+        </small>
+      </div>
+      <div>
+        <ion-item>
+          <ion-label>Password</ion-label>
+          <ion-input type="text" #pwd="ngModel" name="pwd" [(ngModel)]="login.pwd" required></ion-input>
+        </ion-item>
+        <small [hidden]="!(formulario_login.submitted && !pwd.valid)">
+          Contraseña obligatoria
+        </small>
+      </div>
+      <div>
+        <ion-item>
+          <ion-label>Password repe</ion-label>
+          <ion-input type="text" #pwd2="ngModel" name="pwd2" [(ngModel)]="login.pwd2" required ></ion-input> <!-- Quito la directiva personalizada... validateEqual="pwd"-->
+        </ion-item>
+        <small [hidden]="(pwd2.valid || pwd2.pristine)">
+          Repita la misma contraseña
+        </small>
+      </div>
+      <button type="submit" ion-button [disabled]=!(formulario_login.valid)>Acceder</button>
+    </form>
+  </div>
+
 </ion-content>

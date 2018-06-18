@@ -7,6 +7,7 @@ import { AlertController } from 'ionic-angular';
 import { Persona } from '../../app/CalculaIMC.model';
 import { PersonaService } from '../../app/CalculaIMC.service';
 import { Storage } from '@ionic/storage';
+import { Login } from '../../app/login.model';
 
 @Component({
   selector: 'CalculaIMC',
@@ -21,10 +22,13 @@ export class CalculaIMC {
   private persona: Persona;         //Los campos peso y altura de la pagina estan ligados a esta variable
   private persona_cargada : boolean;//Flag indicando que ya se ha recibido esta llamada y se puede visualizar en la pagina
   private lista_personas : Persona[];   //Resultado de la busqueda colectivo 
-
+  private login: Login;             //Variable definda para el formulario
   
   constructor(persona_service: PersonaService, 
               private alertCtrl: AlertController) {  //Declaro los servicios que  luego uso
+    //inicializo la variable que uso en el forumlario
+    this.login= new Login;
+    
     //Distintos modos de actualizar los inputs para el calculo del IMC
     
     //1. Estaticamente, mediante el constructor
@@ -93,4 +97,10 @@ export class CalculaIMC {
       });                                     
       alert.present();                       //Muestro en pantalla el alert
     }
+
+  acceder (datos: Login, valido: boolean){
+  //Funcion del formulario para validar
+    console.log(datos);
+    console.log(valido);
+  }
 }
