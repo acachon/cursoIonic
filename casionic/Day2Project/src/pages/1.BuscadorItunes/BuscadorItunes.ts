@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 import { Cancion } from '../../app/BuscadorItunes.model';
 import { BuscadorService } from '../../app/BuscadorItunes.service';
-import { Storage } from '@ionic/storage';
 import { MisFavoritos } from '../../app/MisFavoritos.service';
 
 @Component({
@@ -25,7 +24,6 @@ export class BuscadorItunes {
   private misFavoritos: Cancion[];      //Mi lista de favoritos
 
   constructor(private servicioBusquedaItunes : BuscadorService,
-              public storage: Storage,
               private servicioListaFavoritos: MisFavoritos) {
   //Inicializo variables de la pagina
     this.caratula = "assets/imgs/ItunesIonic_logo.png";     //Foto por defecto mientras no se seleccione ninguna de la lista

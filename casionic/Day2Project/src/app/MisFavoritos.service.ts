@@ -51,15 +51,6 @@ export class MisFavoritos {
                 console.log("Ahora tienes " + this.misFavoritos.length + " favoritos, solo.");
             }  
         });
-
-
-    /*
-        return this.storage.get("favoritosDB").then((val) =>
-        {
-            var listado=val;
-            return listado;
-        });
-    */
     }
 
     public itemAdd(miCancion: Cancion) {  
