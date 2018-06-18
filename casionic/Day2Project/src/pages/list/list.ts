@@ -49,9 +49,8 @@ export class ListPage {
             };
           }
         }
-    });
-      
-  }
+    });  
+  } //Fin constructor
 
   itemTapped(event, item) {
     //Abro una ventana con al ficha para escucharla
@@ -76,27 +75,24 @@ export class ListPage {
     this.items = this.items.filter(obj => obj !== item);
 
     //Reescribo el storage con el nuevo array sin ese elemento
-    //TODO: eliminar del fichero storage
     
     //Recupero el listado guardado en storage para eliminar la elegida
     //Actualizo el fichero en esta misma promesa
-    /*
     this.storage.get("favoritos").then((val) => {
       if (val==null){ //Si no existe inicializo misFavoritos
         this.misFavoritos=undefined;
       }else{
         this.misFavoritos=val;
         console.log("Ya tenias " + val.length + " canciones favoritas" );
+    
+        //Filtro el elemento que se ha elegido elinminar (identificado por su trackId)
+        this.misFavoritos = this.misFavoritos.filter(obj => obj.trackId !== item.id);
+    
+        //Vuelvo a almacenar el listado de favoritos completo  
+        this.storage.set("favoritos", this.misFavoritos);
+        console.log("Eliminada en fichero: " + item.trackId);
+        console.log("Ahora tienes " + this.misFavoritos.length + " favoritos, solo.");
       }
-    
-    //Filtro el elemento que se ha elegido elinminar (identificado por su trackId)
-    this.misFavoritos = this.misFavoritos.filter(obj => obj.trackId !== item.trackId);
-    
-    //Vuelvo a almacenar el listado de favoritos completo  
-    this.storage.set("favoritos", this.misFavoritos);
-    console.log("Eliminada en fichero: " + item.trackId);
-    console.log("Ahora tienes " + this.misFavoritos.length + " favoritos, solo.")
-    }*/
-  } //item deleted
-  
-}
+    });
+  } //Fin itemDeleted
+} // Fin class ListPage
