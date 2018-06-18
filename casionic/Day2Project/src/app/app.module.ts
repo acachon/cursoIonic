@@ -7,13 +7,13 @@ import { MyApp } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { PantallaInicio } from '../pages/0.pantallaInicio/PantallaInicio';
-import { ListPage } from '../pages/list/list';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { BuscadorItunes } from '../pages/1.BuscadorItunes/BuscadorItunes';
 import { CalculaIMC } from '../pages/2.CalculaIMC/CalculaIMC';
 import { IonicStorageModule } from '@ionic/storage';
 import { EqualValidator } from './validatorpwd.directive';
 import { FormsModule } from '@angular/forms';
+import { FavoritosPage } from '../pages/3.Favoritos/favoritos';
 
 
 @NgModule({
@@ -21,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     MyApp,
     PantallaInicio,
     ItemDetailsPage,
-    ListPage, 
+    FavoritosPage, 
     BuscadorItunes,
     CalculaIMC,
     EqualValidator
@@ -38,7 +38,7 @@ import { FormsModule } from '@angular/forms';
     MyApp,
     PantallaInicio,
     ItemDetailsPage,
-    ListPage,
+    FavoritosPage,
     BuscadorItunes,
     CalculaIMC,
   ],

@@ -5,10 +5,10 @@ import { Storage } from '@ionic/storage';
 import { Cancion } from '../../app/BuscadorItunes.model';
 
 @Component({
-  selector: 'page-list',
-  templateUrl: 'list.html'
+  selector: 'page-favoritos',
+  templateUrl: 'favoritos.html'
 })
-export class ListPage {
+export class FavoritosPage {
   icons: string[]=['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
   'american-football', 'boat', 'bluetooth', 'build'];
   items: Array<{titulo: string, autor: string, icon: string, src: string, audio: string, id: number}>;

@@ -4,9 +4,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { PantallaInicio } from '../pages/0.pantallaInicio/PantallaInicio';
-import { ListPage } from '../pages/list/list';
 import { BuscadorItunes } from '../pages/1.BuscadorItunes/BuscadorItunes';
 import { CalculaIMC } from '../pages/2.CalculaIMC/CalculaIMC';
+import { FavoritosPage } from '../pages/3.Favoritos/favoritos';
 
 
 @Component({
@@ -31,7 +31,7 @@ export class MyApp {
     this.pages = [
       { title: 'Inicio', component: PantallaInicio },
       { title: 'Calcula IMC', component: CalculaIMC },
-      { title: 'Mis favoritos iTunes', component: ListPage },
+      { title: 'Mis favoritos iTunes', component: FavoritosPage },
       { title: 'Buscador iTunes', component: BuscadorItunes }
     ];
   }
