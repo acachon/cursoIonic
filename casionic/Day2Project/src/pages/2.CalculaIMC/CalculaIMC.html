@@ -73,7 +73,7 @@
       <div>
         <ion-item>
           <ion-label>Password repe</ion-label>
-          <ion-input type="text" #pwd2="ngModel" name="pwd2" [(ngModel)]="login.pwd2" required ></ion-input> <!-- Quito la directiva personalizada... validateEqual="pwd"-->
+          <ion-input type="text" #pwd2="ngModel" name="pwd2" [(ngModel)]="login.pwd2" required validateEqual="pwd"></ion-input> <!-- validateEqual es una directiva personalizada-->
         </ion-item>
         <small [hidden]="(pwd2.valid || pwd2.pristine)">
           Repita la misma contraseña

@@ -12,6 +12,8 @@ import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { BuscadorItunes } from '../pages/1.BuscadorItunes/BuscadorItunes';
 import { CalculaIMC } from '../pages/2.CalculaIMC/CalculaIMC';
 import { IonicStorageModule } from '@ionic/storage';
+import { EqualValidator } from './validatorpwd.directive';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,12 +24,14 @@ import { IonicStorageModule } from '@ionic/storage';
     ListPage, 
     BuscadorItunes,
     CalculaIMC,
+    EqualValidator
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
