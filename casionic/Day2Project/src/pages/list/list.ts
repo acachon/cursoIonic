@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ItemDetailsPage } from '../item-details/item-details';
 import { Storage } from '@ionic/storage';
+import { Cancion } from '../../app/BuscadorItunes.model';
 
 @Component({
   selector: 'page-list',
@@ -10,8 +11,10 @@ import { Storage } from '@ionic/storage';
 export class ListPage {
   icons: string[]=['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
   'american-football', 'boat', 'bluetooth', 'build'];
-  items: Array<{titulo: string, autor: string, icon: string, src: string, audio: string}>;
+  items: Array<{titulo: string, autor: string, icon: string, src: string, audio: string, id: number}>;
   private flagBorrar: boolean=false;  //marco si se ha borrado la cancion
+  private misFavoritos: Cancion[];      //Mi lista de favoritos
+
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
@@ -30,6 +33,7 @@ export class ListPage {
           icon: this.icons[Math.floor(Math.random() * this.icons.length)],     //Cambiar la estructura para meter la portada
           src: "assets/imgs/ItunesIonic_logo.png",
           audio: "",
+          id:0,
         }];
       } else {          //si existe una lista la cargo y sumo al final la nueva cancion
           console.log("Tienes " + val.length + " canciones favoritas" );
@@ -41,6 +45,7 @@ export class ListPage {
               icon: this.icons[Math.floor(Math.random() * this.icons.length)],     //Cambiar la estructura para meter la portada
               src: val[i].artworkUrl100,
               audio: val[i].previewUrl,
+              id: val[i].trackId,
             };
           }
         }
@@ -60,6 +65,7 @@ export class ListPage {
   }
 
   itemDeleted(event, item) {
+  //Borro el elemento elegido del listado y del fichero
     //Borro la cancion de mis favoritos
     console.log("Eliminada la cancion: " + item.titulo);
 
@@ -72,7 +78,25 @@ export class ListPage {
     //Reescribo el storage con el nuevo array sin ese elemento
     //TODO: eliminar del fichero storage
     
+    //Recupero el listado guardado en storage para eliminar la elegida
+    //Actualizo el fichero en esta misma promesa
+    /*
+    this.storage.get("favoritos").then((val) => {
+      if (val==null){ //Si no existe inicializo misFavoritos
+        this.misFavoritos=undefined;
+      }else{
+        this.misFavoritos=val;
+        console.log("Ya tenias " + val.length + " canciones favoritas" );
+      }
     
-  }
+    //Filtro el elemento que se ha elegido elinminar (identificado por su trackId)
+    this.misFavoritos = this.misFavoritos.filter(obj => obj.trackId !== item.trackId);
+    
+    //Vuelvo a almacenar el listado de favoritos completo  
+    this.storage.set("favoritos", this.misFavoritos);
+    console.log("Eliminada en fichero: " + item.trackId);
+    console.log("Ahora tienes " + this.misFavoritos.length + " favoritos, solo.")
+    }*/
+  } //item deleted
   
 }

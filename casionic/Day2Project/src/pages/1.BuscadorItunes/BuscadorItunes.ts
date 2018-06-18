@@ -30,6 +30,7 @@ export class BuscadorItunes {
   }
 
   meterFavoritos(){
+  //Almaceno el listado de fvortios en Storage 
     //Pulso el boton de favoritos
     console.log("Favortitos pulsado");
     

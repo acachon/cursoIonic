@@ -13,9 +13,6 @@
             "response": "response3"
         }
     ],
-    "profile": {
-        "name": "typicode"
-    },
     "wifiEventos": [
         {
             "wifiID": 0,
@@ -105,34 +102,6 @@
             "eventList": [],
             "welcome": "",
             "history": []            
-        }
-    ],
-
-
-    "wifis": [
-        {
-            "wifiID": 0,
-            "wifiName": "GET12-10",
-            "grupos": [
-                {
-                    "grupoName": "Ficha2Dos",
-                    "grupoID": 0,
-                    "invitados": [
-                        {
-                            "invitadoName": "Angel",
-                            "invitadoID": 0
-                        },
-                        {
-                            "invitadoName": "Jose",
-                            "invitadoID": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "wifiID": 1,
-            "wifiName": "GET12-05"
         }
     ]
 }
