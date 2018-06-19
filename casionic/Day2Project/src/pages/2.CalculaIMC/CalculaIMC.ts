@@ -8,6 +8,8 @@ import { Persona } from '../../app/CalculaIMC.model';
 import { PersonaService } from '../../app/CalculaIMC.service';
 import { Storage } from '@ionic/storage';
 import { Login } from '../../app/login.model';
+import { Observable } from 'rxjs/Observable';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'CalculaIMC',
@@ -24,7 +26,7 @@ export class CalculaIMC {
   private lista_personas : Persona[];   //Resultado de la busqueda colectivo 
   private login: Login;             //Variable definda para el formulario
   
-  constructor(persona_service: PersonaService, 
+  constructor(private persona_service: PersonaService, 
               private alertCtrl: AlertController) {  //Declaro los servicios que  luego uso
     //inicializo la variable que uso en el forumlario
     this.login= new Login;
@@ -102,5 +104,22 @@ export class CalculaIMC {
   //Funcion del formulario para validar
     console.log(datos);
     console.log(valido);
+    //Llamo al servicio 
+      let respuesta: Observable<Object>= this.persona_service.postLogin(datos);
+      respuesta.subscribe(
+        ok=>{
+            console.log("Ok respuesta recibida");
+            console.log(ok);
+            //let valorRespuesta = <HttpResponse<Object>> ok;
+            //console.log(valorRespuesta);
+        },
+        ko=>{
+            console.log("KO recibido");
+            console.log(ko);
+        },
+        ()=>{
+            console.log("Completado!!")
+        }
+      );
   }
 }
