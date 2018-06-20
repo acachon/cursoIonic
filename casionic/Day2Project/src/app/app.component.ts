@@ -7,6 +7,7 @@ import { PantallaInicio } from '../pages/0.pantallaInicio/PantallaInicio';
 import { BuscadorItunes } from '../pages/1.BuscadorItunes/BuscadorItunes';
 import { CalculaIMC } from '../pages/2.CalculaIMC/CalculaIMC';
 import { FavoritosPage } from '../pages/3.Favoritos/favoritos';
+import { WebMapPage } from '../pages/web-map/web-map';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make PantallaInicio the root (or first) page
-  rootPage = BuscadorItunes;
+  rootPage = WebMapPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -32,7 +33,8 @@ export class MyApp {
       { title: 'Inicio', component: PantallaInicio },
       { title: 'Calcula IMC', component: CalculaIMC },
       { title: 'Mis favoritos iTunes', component: FavoritosPage },
-      { title: 'Buscador iTunes', component: BuscadorItunes }
+      { title: 'Buscador iTunes', component: BuscadorItunes },
+      { title: 'Mapa Web', component: WebMapPage }
     ];
   }
 

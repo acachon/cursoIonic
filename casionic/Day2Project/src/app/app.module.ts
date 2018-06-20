@@ -14,6 +14,10 @@ import { IonicStorageModule } from '@ionic/storage';
 import { EqualValidator } from './validatorpwd.directive';
 import { FormsModule } from '@angular/forms';
 import { FavoritosPage } from '../pages/3.Favoritos/favoritos';
+import { WebMapPage } from '../pages/web-map/web-map';
+import { Geolocation } from '@ionic-native/geolocation';
+
+
 
 
 @NgModule({
@@ -24,7 +28,8 @@ import { FavoritosPage } from '../pages/3.Favoritos/favoritos';
     FavoritosPage, 
     BuscadorItunes,
     CalculaIMC,
-    EqualValidator
+    EqualValidator,
+    WebMapPage
   ],
   imports: [
     BrowserModule,
@@ -41,10 +46,12 @@ import { FavoritosPage } from '../pages/3.Favoritos/favoritos';
     FavoritosPage,
     BuscadorItunes,
     CalculaIMC,
+    WebMapPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
