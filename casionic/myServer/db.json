@@ -48,18 +48,18 @@
             "userName": "angel",
             "pin": 1234,
             "token": 9990,
-            "eventList": [
-                "00",
-                "01",
-                "10"
+            "eventList":[
+                {"eventName": "Ionic Course", "checkIn": true, "message": "Ya habias hecho checkIn"},
+                {"eventName": "Ficha2", "checkIn": false, "message": "Bienvenido al curso 01"},
+                {"eventName": "Privado", "checkIn": false, "message": "Bienvenido a la fiesta!"}
             ],
             "welcome": "Mensaje del profesor para Angel",
             "history": [
-                {"date":"11/06/2018", "eventID": "00", "status": "late", "comments": "Problemas de trafico"},
-                {"date":"11/06/2018", "eventID": "01", "status": "in", "comments": ""},
-                {"date":"11/06/2018", "eventID": "10", "status": "late", "comments": "Me quede dormido"}, 
-                {"date":"12/06/2018", "eventID": "00", "status": "in", "comments": ""},
-                {"date":"13/06/2018", "eventID": "00", "status": "in", "comments": ""} 
+                {"date":"11/06/2018", "eventName": "Ionic Course", "status": "late", "comments": "Problemas de trafico"},
+                {"date":"11/06/2018", "eventName": "Ficha2", "status": "in", "comments": ""},
+                {"date":"11/06/2018", "eventName": "Privado", "status": "late", "comments": "Me quede dormido"}, 
+                {"date":"12/06/2018", "eventName": "Ionic Course", "status": "in", "comments": ""},
+                {"date":"13/06/2018", "eventName": "Ionic Course", "status": "in", "comments": ""} 
             ]
         },
         {
@@ -67,16 +67,16 @@
             "userName": "dani",
             "pin": 1234,
             "token": 9991,
-            "eventList": [
-                "00",
-                "01"
+            "eventList":[
+                {"eventName": "Ionic Course", "checkIn": false, "message": ""},
+                {"eventName": "Ficha2", "checkIn": false, "message": "Bienvenido al curso 01"}
             ],
             "welcome": "Mensaje del profesor para Dani",
             "history": [
-                {"date":"11/06/2018", "eventID": "00", "status": "late", "comments": "Problemas de trafico"},
-                {"date":"11/06/2018", "eventID": "01", "status": "in", "comments": ""},
-                {"date":"12/06/2018", "eventID": "00", "status": "in", "comments": ""},
-                {"date":"13/06/2018", "eventID": "00", "status": "in", "comments": ""} 
+                {"date":"11/06/2018", "eventName": "Ionic Course", "status": "late", "comments": "Problemas de trafico"},
+                {"date":"11/06/2018", "eventName": "Ficha2", "status": "in", "comments": ""},
+                {"date":"12/06/2018", "eventName": "Ionic Course", "status": "in", "comments": ""},
+                {"date":"13/06/2018", "eventName": "Ionic Course", "status": "in", "comments": ""} 
             ]            
         },
         {
@@ -84,14 +84,15 @@
             "userName": "obdulia",
             "pin": 4321,
             "token": 9992,
-            "eventList": [
-                "00"
+            "eventList":[
+                {"eventName": "Ionic Course", "checkIn": false, "message": ""},
+                {"eventName": "Ficha2", "checkIn": false, "message": "Bienvenido al curso 01"}
             ],
             "welcome": "Mensaje del profesor para Obdulia",
             "history": [
-                {"date":"11/06/2018", "eventID": "00", "status": "late", "comments": "Problemas de trafico"},
-                {"date":"12/06/2018", "eventID": "00", "status": "in", "comments": ""},
-                {"date":"13/06/2018", "eventID": "00", "status": "in", "comments": ""} 
+                {"date":"11/06/2018", "eventName": "Ionic Course", "status": "late", "comments": "Problemas de trafico"},
+                {"date":"12/06/2018", "eventName": "Ionic Course", "status": "in", "comments": ""},
+                {"date":"13/06/2018", "eventName": "Ionic Course", "status": "in", "comments": ""} 
             ]            
         },
         {
