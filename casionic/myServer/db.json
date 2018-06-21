@@ -16,7 +16,7 @@
     "wifiEventos": [
         {
             "wifiID": 0,
-            "wifiName":"GET06-06",
+            "wifiName":"wifi1",
             "eventArray": [
                 {
                     "eventID": "00",
@@ -32,7 +32,7 @@
         },
         {
             "wifiID": 1,
-            "wifiName":"GET12-12",
+            "wifiName":"wifi2",
             "eventArray": [
                 {
                     "eventID": "10",
