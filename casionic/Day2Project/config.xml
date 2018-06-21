@@ -3,7 +3,7 @@
     <name>MyItunesApp</name>
     <description>My pages built in the ionic Course</description>
     <author email="contact@angelcachon.com" href="http://angelcachon.com">Angel J. Cachon</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.2.101:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -87,5 +87,8 @@
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
     </plugin>
     <allow-navigation href="http://192.168.2.91:8100" />
+    <plugin name="cordova-plugin-screen-orientation" spec="^3.0.1" />
+    <plugin name="cordova-plugin-local-notification" spec="^0.9.0-beta.2" />
+    <plugin name="cordova-plugin-camera" spec="^4.0.3" />
     <engine name="android" spec="7.0.0" />
 </widget>

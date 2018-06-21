@@ -8,6 +8,7 @@ import { BuscadorItunes } from '../pages/1.BuscadorItunes/BuscadorItunes';
 import { CalculaIMC } from '../pages/2.CalculaIMC/CalculaIMC';
 import { FavoritosPage } from '../pages/3.Favoritos/favoritos';
 import { WebMapPage } from '../pages/web-map/web-map';
+import { FotoCam } from '../pages/4.fotoCam/fotocam';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make PantallaInicio the root (or first) page
-  rootPage = WebMapPage;
+  rootPage = FotoCam;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -34,7 +35,8 @@ export class MyApp {
       { title: 'Calcula IMC', component: CalculaIMC },
       { title: 'Mis favoritos iTunes', component: FavoritosPage },
       { title: 'Buscador iTunes', component: BuscadorItunes },
-      { title: 'Mapa Web', component: WebMapPage }
+      { title: 'Mapa Web', component: WebMapPage },
+      { title: 'Camara Fotos', component: FotoCam }
     ];
   }
 

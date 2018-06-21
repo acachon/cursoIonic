@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { FavoritosPage } from '../pages/3.Favoritos/favoritos';
 import { WebMapPage } from '../pages/web-map/web-map';
 import { Geolocation } from '@ionic-native/geolocation';
+import { FotoCam } from '../pages/4.fotoCam/fotocam';
 
 
 
@@ -29,7 +30,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     BuscadorItunes,
     CalculaIMC,
     EqualValidator,
-    WebMapPage
+    WebMapPage,
+    FotoCam
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     FavoritosPage,
     BuscadorItunes,
     CalculaIMC,
-    WebMapPage
+    WebMapPage,
+    FotoCam
   ],
   providers: [
     StatusBar,

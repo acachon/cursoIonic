@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Camara de fotos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <h3>Venga a echar una fotito!</h3>
+
+  <input type="text" value={{mensaje}}><br>
+  
+  <button ion-button icon-only (click)="hazFoto()">
+    <ion-icon name="camera"></ion-icon>
+  </button>
+  
+  <img src={{ruta_foto}}>
+
+</ion-content>
