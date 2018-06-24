@@ -16,7 +16,7 @@
     "wifiEventos": [
         {
             "wifiID": 0,
-            "wifiName":"wifi1",
+            "wifiName":"Orange-116C",
             "eventArray": [
                 {
                     "eventID": "00",
