@@ -85,8 +85,8 @@
             "pin": 1234,
             "token": 9990,
             "eventList":[
-                {"eventName": "Ionic_Course", "checkIn": true, "message": "Ya habias hecho checkIn\nNo tienes mas mensajes"},
-                {"eventName": "Solo_Chicos", "checkIn": false, "message": "Hoy a las 13:45 habra cervezas para\ndespedirnos como merecemos."},
+                {"eventName": "Ionic_Course", "checkIn": true, "message": "Ya habias hecho checkIn. No tienes mas mensajes"},
+                {"eventName": "Solo_Chicos", "checkIn": false, "message": "Hoy a las 13:45 cervezas para despedirnos, Angel"},
                 {"eventName": "Privado", "checkIn": false, "message": "Bienvenido a la fiesta!"}
             ],
             "welcome": "Mensaje del profesor para Angel",
@@ -105,8 +105,8 @@
             "pin": 1234,
             "token": 9991,
             "eventList":[
-                {"eventName": "Ionic_Course", "checkIn": false, "message": "Ya habias hecho checkIn\nNo tienes mas mensajes"},
-                {"eventName": "Solo_Chicos", "checkIn": false, "message": "Hoy a las 13:45 habra cervezas para\ndespedirnos como merecemos."},
+                {"eventName": "Ionic_Course", "checkIn": false, "message": "Ya habias hecho checkIn. No tienes mas mensajes"},
+                {"eventName": "Solo_Chicos", "checkIn": false, "message": "Hoy a las 13:45 habra cervezas para despedirnos, Dani."},
                 {"eventName": "Privado", "checkIn": false, "message": "Bienvenido a la fiesta!"}
             ],
             "welcome": "Mensaje del profesor para Dani",
@@ -125,7 +125,7 @@
             "pin": 4321,
             "token": 9992,
             "eventList":[
-                {"eventName": "Ionic_Course", "checkIn": false, "message": "Ya habias hecho checkIn\nNo tienes mas mensajes"},
+                {"eventName": "Ionic_Course", "checkIn": false, "message": "Ya habias hecho checkIn. No tienes mensajes, Obdulia"},
                 {"eventName": "Privado", "checkIn": false, "message": "Bienvenida a la fiesta!"}
             ],
             "welcome": "Mensaje del profesor para Obdulia",
