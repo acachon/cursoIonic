@@ -20,7 +20,7 @@
             "eventArray": [
                 {
                     "eventID": "00",
-                    "eventName": "Ionic Course",
+                    "eventName": "Ionic_Course",
                     "users": ["angel", "dani", "obdulia"]
                 },
                 {
@@ -40,64 +40,106 @@
                     "users": ["angel"]
                 }
             ] 
+        },
+        {
+            "wifiID": 2,
+            "wifiName":"GET12-06",
+            "eventArray": [
+                {
+                    "eventID": "00",
+                    "eventName": "Ionic_Course",
+                    "users": ["angel", "dani", "obdulia"]
+                },
+                {
+                    "eventID": "01",
+                    "eventName": "Solo_Chicos",
+                    "users": ["angel", "dani"]
+                }
+            ] 
+        },
+        {
+            "wifiID": 3,
+            "wifiName":"Homewifi",
+            "eventArray": [
+                {
+                    "eventID": "00",
+                    "eventName": "Ionic_Course",
+                    "users": ["angel", "dani", "obdulia"]
+                },
+                {
+                    "eventID": "01",
+                    "eventName": "Solo_Chicos",
+                    "users": ["angel", "dani"]
+                }
+            ] 
         }
+
+
+
     ],
     "users": [
         {
             "userID": 0,
             "userName": "angel",
+            "avatar": "https://avatars1.githubusercontent.com/u/36812721?s=400&u=2ac95ea573c0d31e8dc1fa5f6c2ac6808cc80b3e&v=4",
             "pin": 1234,
             "token": 9990,
             "eventList":[
-                {"eventName": "Ionic Course", "checkIn": true, "message": "Ya habias hecho checkIn"},
-                {"eventName": "Ficha2", "checkIn": false, "message": "Bienvenido al curso 01"},
+                {"eventName": "Ionic_Course", "checkIn": true, "message": "Ya habias hecho checkIn\nNo tienes mas mensajes"},
+                {"eventName": "Solo_Chicos", "checkIn": false, "message": "Hoy a las 13:45 habra cervezas para\ndespedirnos como merecemos."},
                 {"eventName": "Privado", "checkIn": false, "message": "Bienvenido a la fiesta!"}
             ],
             "welcome": "Mensaje del profesor para Angel",
             "history": [
-                {"date":"11/06/2018", "eventName": "Ionic Course", "status": "late", "comments": "Problemas de trafico"},
-                {"date":"11/06/2018", "eventName": "Ficha2", "status": "in", "comments": ""},
-                {"date":"11/06/2018", "eventName": "Privado", "status": "late", "comments": "Me quede dormido"}, 
-                {"date":"12/06/2018", "eventName": "Ionic Course", "status": "in", "comments": ""},
-                {"date":"13/06/2018", "eventName": "Ionic Course", "status": "in", "comments": ""} 
+                {"date":"19/06/2018", "eventName": "Ionic_Course",  "status": "retraso",    "comments": "Problemas de trafico"},
+                {"date":"19/06/2018", "eventName": "Solo_Chicos",   "status": "presente",   "comments": ""},
+                {"date":"20/06/2018", "eventName": "Ionic_Course",  "status": "presente",   "comments": ""}, 
+                {"date":"21/06/2018", "eventName": "Ionic_Course",  "status": "ausente",    "comments": "Entrevista de trabajo"},
+                {"date":"22/06/2018", "eventName": "Ionic_Course",  "status": "presente",   "comments": ""} 
             ]
         },
         {
             "userID": 1,
             "userName": "dani",
+            "avatar": "https://media.licdn.com/dms/image/C4E03AQHPqGALqxTwzQ/profile-displayphoto-shrink_800_800/0?e=1534982400&v=beta&t=Kf0ygqyygOOsQVqqkDcyi-ZH_yWWI6rFzte9Tn_P-ro",
             "pin": 1234,
             "token": 9991,
             "eventList":[
-                {"eventName": "Ionic Course", "checkIn": false, "message": ""},
-                {"eventName": "Ficha2", "checkIn": false, "message": "Bienvenido al curso 01"}
+                {"eventName": "Ionic_Course", "checkIn": false, "message": "Ya habias hecho checkIn\nNo tienes mas mensajes"},
+                {"eventName": "Solo_Chicos", "checkIn": false, "message": "Hoy a las 13:45 habra cervezas para\ndespedirnos como merecemos."},
+                {"eventName": "Privado", "checkIn": false, "message": "Bienvenido a la fiesta!"}
             ],
             "welcome": "Mensaje del profesor para Dani",
             "history": [
-                {"date":"11/06/2018", "eventName": "Ionic Course", "status": "late", "comments": "Problemas de trafico"},
-                {"date":"11/06/2018", "eventName": "Ficha2", "status": "in", "comments": ""},
-                {"date":"12/06/2018", "eventName": "Ionic Course", "status": "in", "comments": ""},
-                {"date":"13/06/2018", "eventName": "Ionic Course", "status": "in", "comments": ""} 
+                {"date":"19/06/2018", "eventName": "Ionic_Course",  "status": "retraso",    "comments": "Me quedé dormido"},
+                {"date":"19/06/2018", "eventName": "Solo_Chicos",   "status": "presente",   "comments": ""},
+                {"date":"20/06/2018", "eventName": "Ionic_Course",  "status": "presente",   "comments": ""}, 
+                {"date":"21/06/2018", "eventName": "Ionic_Course",  "status": "presente",   "comments": ""},
+                {"date":"22/06/2018", "eventName": "Ionic_Course",  "status": "presente",   "comments": ""} 
             ]            
         },
         {
             "userID": 2,
             "userName": "obdulia",
+            "avatar": "https://media.licdn.com/dms/image/C5603AQG_xhKpDTQeIA/profile-displayphoto-shrink_800_800/0?e=1534982400&v=beta&t=hUabZttXiTHKToU3_Igl1Oe2B62VcefppPTeQ7H0ENE",
             "pin": 4321,
             "token": 9992,
             "eventList":[
-                {"eventName": "Ionic Course", "checkIn": false, "message": ""},
-                {"eventName": "Ficha2", "checkIn": false, "message": "Bienvenido al curso 01"}
+                {"eventName": "Ionic_Course", "checkIn": false, "message": "Ya habias hecho checkIn\nNo tienes mas mensajes"},
+                {"eventName": "Privado", "checkIn": false, "message": "Bienvenida a la fiesta!"}
             ],
             "welcome": "Mensaje del profesor para Obdulia",
             "history": [
-                {"date":"11/06/2018", "eventName": "Ionic Course", "status": "late", "comments": "Problemas de trafico"},
-                {"date":"12/06/2018", "eventName": "Ionic Course", "status": "in", "comments": ""},
-                {"date":"13/06/2018", "eventName": "Ionic Course", "status": "in", "comments": ""} 
+                {"date":"19/06/2018", "eventName": "Ionic_Course",  "status": "presente",  "comments": "Me quedé dormido"},
+                {"date":"20/06/2018", "eventName": "Ionic_Course",  "status": "presente",  "comments": ""}, 
+                {"date":"21/06/2018", "eventName": "Ionic_Course",  "status": "presente",  "comments": ""},
+                {"date":"22/06/2018", "eventName": "Ionic_Course",  "status": "ausente",   "comments": "Motivos personales"} 
             ]            
         },
         {
             "userID": 3,
             "userName": "jose",
+            "avatar": "https://avatars2.githubusercontent.com/u/5845079?s=400&v=4",
             "pin": 4321,
             "token": 9993,
             "eventList": [],
